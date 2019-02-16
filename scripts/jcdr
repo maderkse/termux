@@ -1,0 +1,2 @@
+~/.bashrc
+jcnw $1.java && jd $1 && jr $1
