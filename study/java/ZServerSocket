@@ -1,0 +1,22 @@
+import java.net.Socket;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+public class ZSocket {
+   public static void main(String[] args) {
+      String hostName = args[0];
+      int portNumber = Integer.parseInt(args[1]);
+
+      System.out.println("Hi " + ZSocket.class.getSimpleName() + " here!");
+      try(Socket echoClient = new Socket(hostName,portNumber);
+          PrintWriter out = new PrintWriter(echoClient.getOutputStream(),true);
+          BufferedReader in = new BufferedReader(new InputStreamReader(echoClient.getInputStream()));
+          BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
+          ){
+
+      } catch(IOException e) {
+      }
+   }
+}
